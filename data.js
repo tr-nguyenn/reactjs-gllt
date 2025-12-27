@@ -3,7 +3,7 @@ import pic2 from "./src/assets/pic2.png";
 import pic3 from "./src/assets/pic3.png";
 import pic4 from "./src/assets/pic4.png";
 
-export const data = [
+export const myData = [
   {
     image: pic1,
     title: "Components",
@@ -22,6 +22,6 @@ export const data = [
   {
     image: pic4,
     title: "State",
-    desc: " ",
+    desc: "Dữ liệu được React quản lý, khi thay đổi sẽ tự động làm mới giao diện.",
   },
 ];
