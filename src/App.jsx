@@ -1,11 +1,13 @@
+import {useState} from "react";
 import {myData} from "../data.js";
 import Header from "./components/Header/Header.jsx";
 import MainContent from "./components/MainContent/MainContent.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Vui lòng click vào nút");
   function handleSelect(selectedButton) {
-    alert(`${selectedButton} được chọn`);
+    setSelectedTopic(selectedButton);
   }
 
   return (
@@ -31,6 +33,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </>
