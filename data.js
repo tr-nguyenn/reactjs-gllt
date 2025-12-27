@@ -22,6 +22,6 @@ export const data = [
   {
     image: pic4,
     title: "State",
-    desc: "Dữ liệu được React quản lý, khi thay đổi sẽ tự động làm mới giao diện.",
+    desc: " ",
   },
 ];
