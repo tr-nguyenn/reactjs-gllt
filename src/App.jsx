@@ -1,11 +1,11 @@
 import {useState} from "react";
-import {myData} from "../data.js";
+import {myData, EXAMPLES} from "../data.js";
 import Header from "./components/Header/Header.jsx";
 import MainContent from "./components/MainContent/MainContent.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("Vui lòng click vào nút");
+  const [selectedTopic, setSelectedTopic] = useState("components");
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
   }
@@ -28,12 +28,18 @@ function App() {
           <h2>Examples</h2>
           {/* prettier-ignore */}
           <menu>
-            <TabButton onSelect={() => handleSelect("component")}>Component</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>Components</TabButton>
             <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].desc}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </>
