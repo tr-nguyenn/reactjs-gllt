@@ -4,6 +4,7 @@ import Header from "./components/Header/Header.jsx";
 import MainContent from "./components/MainContent/MainContent.jsx";
 import TabButton from "./components/TabButton.jsx";
 import Section from "./components/MainContent/Section.jsx";
+import Tabs from "./components/MainContent/Tab.jsx";
 
 function App() {
     const [selectedTopic, setSelectedTopic] = useState();
@@ -33,11 +34,6 @@ function App() {
                     id={"core-concepts"}
                 >
                     <ul>
-                        {/* <MainContent {...myData[0]} />
-                        <MainContent {...myData[1]} />
-                        <MainContent {...myData[2]} />
-                        <MainContent {...myData[3]} /> */}
-
                         {myData.map((item) => (
                             <MainContent key={item.title} {...item} />
                         ))}
@@ -50,33 +46,17 @@ function App() {
                     className={"demo_class"}
                     data-id={"111111"}
                 >
-                    <menu>
-                        <TabButton
-                            isSelected={selectedTopic === "components"}
-                            onClick={() => handleSelect("components")}
-                        >
-                            Components
-                        </TabButton>
-                        <TabButton
-                            isSelected={selectedTopic === "jsx"}
-                            onClick={() => handleSelect("jsx")}
-                        >
-                            JSX
-                        </TabButton>
-                        <TabButton
-                            isSelected={selectedTopic === "props"}
-                            onClick={() => handleSelect("props")}
-                        >
-                            Props
-                        </TabButton>
-                        <TabButton
-                            isSelected={selectedTopic === "state"}
-                            onClick={() => handleSelect("state")}
-                        >
-                            State
-                        </TabButton>
-                    </menu>
+                    {/* prettier-ignore */}
+                    <Tabs button={
+                        <>
+                        <TabButton isSelected={selectedTopic === "components"} onClick={() => handleSelect("components")}>Components</TabButton>
+                        <TabButton isSelected={selectedTopic === "jsx"} onClick={() => handleSelect("jsx")} >  JSX</TabButton>
+                        <TabButton isSelected={selectedTopic === "props"} onClick={() => handleSelect("props")} >Props</TabButton>
+                        <TabButton isSelected={selectedTopic === "state"} onClick={() => handleSelect("state")} >State</TabButton>
+                        </>
+                    }> 
                     {tabContent}
+                    </Tabs>
                 </Section>
             </main>
         </>
