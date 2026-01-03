@@ -47,7 +47,9 @@ function App() {
                     data-id={"111111"}
                 >
                     {/* prettier-ignore */}
-                    <Tabs button={
+                    <Tabs 
+                        ButtonContainer="menu"
+                        button={
                         <>
                         <TabButton isSelected={selectedTopic === "components"} onClick={() => handleSelect("components")}>Components</TabButton>
                         <TabButton isSelected={selectedTopic === "jsx"} onClick={() => handleSelect("jsx")} >  JSX</TabButton>
