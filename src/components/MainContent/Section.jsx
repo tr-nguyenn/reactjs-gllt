@@ -1,7 +1,6 @@
-export default function Section(props) {
-    const {title, children, id} = props;
+export default function Section({title, children, ...props}) {
     return (
-        <section id={id}>
+        <section {...props}>
             <h2>{title}</h2>
             {children}
         </section>
